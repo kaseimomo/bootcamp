@@ -35,5 +35,21 @@ public class String1 {
     boolean isS1EqualsToS2 = s1.equals(s2);
     System.out.println(isS1EqualsToS2);
 
+    // concat
+    String s5 = s1 + s2;
+    System.out.println(s5); // hellohello
+    System.out.println(s1 + s2); // hellohello
+
+    // -, *, / are not allowed for String
+    System.out.println(s5 + 10);
+    System.out.println(s5 + 'a');
+    System.out.println(s5 + 10.3);
+    System.out.println(s5 + true);
+
+    String j = "hello" + true;
+    // String j2 = 10 + 10; // int + int -> int
+    
+
+
   }
 }
