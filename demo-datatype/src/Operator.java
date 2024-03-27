@@ -15,7 +15,7 @@ public class Operator {
     int e = 10;
     e--;
     --e;
-    e -= 2;
+    e -= 2; //6
     System.out.println(e);
 
     int predecrement = --e; // predecrement = 6 - 1 = 5
