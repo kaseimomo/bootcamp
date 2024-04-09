@@ -40,6 +40,7 @@ public class JavaQuest14 {
   // Code a method here to return true if the integer is palindrome, otherwise
   // false
   public static boolean palindrome(int num) {
+    if ()
     return false;
   }
 }

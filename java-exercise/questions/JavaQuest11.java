@@ -21,6 +21,10 @@ public class JavaQuest11 {
 
   public static int findDelayedArrivalTime(int arrivalTime, int delayedTime) {
     // code here ...
-    return arrivalTime + delayedTime;
+    if(arrivalTime + delayedTime >= 24){
+      return arrivalTime + delayedTime - 24;
+    } else if(arrivalTime + delayedTime == 24) {
+      return 0;
+    } return arrivalTime + delayedTime;
   }
 }

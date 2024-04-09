@@ -26,10 +26,14 @@ public class JavaQuest13 {
   // code here ...
   // Kelvin (蘭氏) = Celsius (攝氏) + 273.15
   // Code a method here to return temperature in Fahrenheit, by inputting temperature in Celsius
-
+  public static double convertKelvin(double celsius) {
+    return celsius + 273.15d;
+  }
   // code here ...
   // Fahrenheit (華氏) = Celsius (攝氏) * 1.80 + 32.00
   // Code a method here to return temperature in Fahrenheit, by inputting temperature in Celsius
-
+  public static double convertFahrenheit(double celsius) {
+    return celsius * 1.80d + 32.00d;
+  }
 
 }

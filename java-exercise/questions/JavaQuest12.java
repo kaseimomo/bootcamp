@@ -27,5 +27,5 @@ public class JavaQuest12 {
 
   // Code a method here to return an array of two numbers that sum up to the
   // target
-
+  
 }
