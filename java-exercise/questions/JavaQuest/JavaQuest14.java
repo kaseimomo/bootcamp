@@ -40,7 +40,17 @@ public class JavaQuest14 {
   // Code a method here to return true if the integer is palindrome, otherwise
   // false
   public static boolean palindrome(int num) {
-    if ()
-    return false;
+    String numStr = String.valueOf(num);
+    int left = 0;
+    int right = numStr.length() - 1;
+
+    while (left < right) { // conditon: while 0 < numStr.length
+      if (numStr.charAt(left) != numStr.charAt(right)) {
+        return false;
+      }
+      left++;
+      right--;
+    }
+    return true;
   }
 }

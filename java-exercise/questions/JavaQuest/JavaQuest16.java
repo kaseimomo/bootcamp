@@ -3,6 +3,8 @@ package questions;
  * Sum up to Zero
  */
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 
 // Input: n = 5
@@ -37,6 +39,15 @@ public class JavaQuest16 {
   // 3. The values in the array has to be unique
 
   public static int[] sumToZero(int n) {
-    int[] nums = new int[n];
+    Random random = new Random();
+    int rn = random.nextInt(n);
+    int[] arr = new int[n];
+
+    for (int i = 0; i < n; i++) {
+      if(arr[n - i] == 0);
+      
+    }
+ 
+    }
 
 }

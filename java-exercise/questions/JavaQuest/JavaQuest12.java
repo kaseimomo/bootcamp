@@ -20,12 +20,23 @@ public class JavaQuest12 {
 
   // Do not change anything in main method
   public static void main(String[] args) {
-    int[] answers = twoSum(new int[] { 2, 7, 11, 15 }, 9); // {2, 7, 11, 15} is the dataset, 9 is the target to sum
-    int[] answers2 = twoSum(new int[] { 3, 2, 4 }, 6); // {3, 2, 4} is the dataset, 6 is the target to sum
-    int[] answers3 = twoSum(new int[] { 3, 3 }, 7); // {3, 3} is the dataset, 7 is the target to sum
+    int[] answers = twoSum(new int[] {2, 7, 11, 15}, 9); // {2, 7, 11, 15} is the dataset, 9 is the target to sum
+    int[] answers2 = twoSum(new int[] {3, 2, 4}, 6); // {3, 2, 4} is the dataset, 6 is the target to sum
+    int[] answers3 = twoSum(new int[] {3, 3}, 7); // {3, 3} is the dataset, 7 is the target to sum
   }
 
   // Code a method here to return an array of two numbers that sum up to the
   // target
-  
+  public static int[] twoSum(int[] nums, int target) {
+    int first = 0;
+    int second = 0;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] + nums[i + 1] == target) {
+        first = nums[i];
+        second = nums[i + 1];
+        return new int[] {first, second};
+      }
+    }
+    return new int[] {-1, -1};
+  }
 }
