@@ -12,7 +12,7 @@ public class Delivery {
  }
 
 public int total() {
- return this.fee * Wine.subTotal;
+ return this.fee * WineMaker.subTotal;
 }
 
  

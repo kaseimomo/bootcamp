@@ -7,16 +7,16 @@ public class CustomerOrder {
  private String client;
 
  // one client has many pack(s) wine
- private Wine[] wines;
+ private WineMaker[] wines;
 
  public CustomerOrder(String client) {
   this.client = client;
-  this.wines = new Wine[0];
+  this.wines = new WineMaker[0];
  }
 
- public void add(Wine wine) {
-  Wine[] copyArr = this.wines;
-  this.wines = new Wine[this.wines.length + 1];
+ public void add(WineMaker wine) {
+  WineMaker[] copyArr = this.wines;
+  this.wines = new WineMaker[this.wines.length + 1];
   int idx = 0;
   for (int i = 0;  i < copyArr.length; i++) {
    wines[idx++] = copyArr[i];

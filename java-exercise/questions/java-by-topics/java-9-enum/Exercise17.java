@@ -9,6 +9,10 @@ enum Level {
         this.value = value;
     }
 
+    public int getValue() {
+        return this.value;
+    }
+
 }
 
 /**
@@ -19,8 +23,8 @@ enum Level {
 public class Exercise17 {
     public static void main(String[] args) {
         Level myVar = Level.MEDIUM;
-
+        System.out.println("This is " + myVar + " level");
         // Write a switch statement to print the expected output.
-
+        System.out.println("enum is " + myVar + ", and its value is " + Level.MEDIUM.getValue());
     }
 }

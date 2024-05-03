@@ -1,10 +1,10 @@
 package Wine;
-public class Main {
+public class UserPrint {
   public static void main(String[] args) {
-   Wine wine1 = new Wine("White Wine", "Chardonnay", 89, 1100, 1);
-   Wine wine2 = new Wine("White Wine", "Sauvignon Blanc", 93, 1300, 1);
-   Wine wine3 = new Wine("Red Wine", "Shiraz", 90, 1300, 1);
-   Wine wine4 = new Wine("Red Wine", "Carménère", 96, 1500, 1);
+   WineMaker wine1 = new WineMaker("White Wine", "Chardonnay", 89, 1100, 1);
+   WineMaker wine2 = new WineMaker("White Wine", "Sauvignon Blanc", 93, 1300, 1);
+   WineMaker wine3 = new WineMaker("Red Wine", "Shiraz", 90, 1300, 1);
+   WineMaker wine4 = new WineMaker("Red Wine", "Carménère", 96, 1500, 1);
 
    System.out.println(wine1);
    System.out.println(wine2);
