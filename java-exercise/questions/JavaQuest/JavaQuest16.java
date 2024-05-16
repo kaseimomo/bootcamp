@@ -3,8 +3,6 @@ package questions;
  * Sum up to Zero
  */
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Random;
 
 // Input: n = 5
