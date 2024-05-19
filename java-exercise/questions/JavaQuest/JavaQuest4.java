@@ -1,4 +1,4 @@
-package questions;
+package JavaQuest;
 public class JavaQuest4 {
   /**
    * Exercise: Print 10 numbers: they must be even and > 0, and divisible by 3

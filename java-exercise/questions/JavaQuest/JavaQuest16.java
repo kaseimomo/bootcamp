@@ -1,8 +1,9 @@
-package questions;
+package JavaQuest;
 /*
  * Sum up to Zero
  */
 
+import java.util.Arrays;
 import java.util.Random;
 
 // Input: n = 5
@@ -27,7 +28,7 @@ public class JavaQuest16 {
     int[] nums1 = sumToZero(3); // n = 3
     int[] nums2 = sumToZero(2); // n = 2
     int[] nums3 = sumToZero(1); // n = 1
-    
+
   }
 
   // code here ...
@@ -37,15 +38,27 @@ public class JavaQuest16 {
   // 3. The values in the array has to be unique
 
   public static int[] sumToZero(int n) {
-    Random random = new Random();
-    int rn = random.nextInt(n);
     int[] arr = new int[n];
+    int index = 0;
+    for (int i = 0; i < n / 2; i++) {
+      arr[index++] = -i - 1;
+      arr[index++] = i + 1;
+    }
+    System.out.println(Arrays.toString(arr));
+    return arr;
 
-    for (int i = 0; i < n; i++) {
-      if(arr[n - i] == 0);
-      
-    }
- 
-    }
+
+
+    // Random random = new Random();
+    // int rn = 0;
+    // int[] arr = new int[n];
+    // for (int i = 0; i < arr.length; i++) {
+    // if (arr[i] == 0)
+    // rn = random.nextInt(n);
+    // arr[i] = rn;
+    // }
+    // System.out.println(Arrays.toString(arr));
+    // return arr;
+  }
 
 }

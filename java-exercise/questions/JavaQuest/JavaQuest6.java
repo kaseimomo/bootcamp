@@ -1,4 +1,4 @@
-package questions;
+package JavaQuest;
 
 import java.util.Arrays;
 
@@ -21,5 +21,16 @@ public class JavaQuest6 {
       secondNo = nextNo;
     }
     System.out.println(Arrays.toString(fs));
+
+    int n = 10;
+    int n1 = 1;
+    int n2 = 1;
+    for (int j = 3; j <= n; j++) {
+      int next = n1 + n2;
+      System.out.print(" " + next);
+      n1 = n2;
+      n2 = next;
+    }
+    System.out.print(n1 + " " + n2);
   }
 }
