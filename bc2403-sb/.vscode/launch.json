@@ -1,0 +1,21 @@
+{
+ "configurations": [
+  {
+   "type": "java",
+   "name": "CalculatorController",
+   "request": "launch",
+   "mainClass": "com.bootcamp.demo.democalculator.controller.CalculatorController",
+   "projectName": "demo-calculator"
+  },
+  {
+   "type": "java",
+   "name": "Spring Boot-DemoHelloworldApplication<demo-helloworld>",
+   "request": "launch",
+   "cwd": "${workspaceFolder}",
+   "mainClass": "com.bootcamp.com.demohelloworld.DemoHelloworldApplication",
+   "projectName": "demo-helloworld",
+   "args": "",
+   "envFile": "${workspaceFolder}/.env"
+  }
+ ]
+}

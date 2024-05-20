@@ -1,0 +1,44 @@
+{
+	"folders": [
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/"
+		// },
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/Java"
+		// },
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/Java/Week1(Datatype,WrapperClass,Conditional,Loop"
+		// },
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/Java/Week2(Array,Loop2,Static-method)"
+		// },
+		{
+			"path": "/Users/charleschan/bootcamp/bc2403/Java/Week3(Class-object,Inheritance)"
+		},
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/Java/Week4(Abstraction,Enum)"
+		// },
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/Java/Week5(Comparator,Linkedlist,List,Queue)"
+		// },
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/Java/Week6(Recursive,Generics,Exception)"
+		// },
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/Java/Week7(NestedClass,FactoryPattern,Lambda,Stream,Optional,Type-inference,Switch-Expression,Records,Threads"
+		// },
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/bc2403/Java/Week9(Maven)"
+		// },
+		// {
+		// 	"path": "/Users/charleschan/bootcamp/java-exercise"
+		// },
+		{
+			"path": "/Users/charleschan/bootcamp/workspaces"
+		},
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
