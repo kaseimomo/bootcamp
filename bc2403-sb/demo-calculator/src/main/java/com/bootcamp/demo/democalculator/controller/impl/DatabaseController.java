@@ -1,4 +1,4 @@
-package com.bootcamp.demo.democalculator.controller;
+package com.bootcamp.demo.democalculator.controller.impl;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.bootcamp.demo.democalculator.controller.DatabaseOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
 @ResponseBody
-public class DatabaseController {
+public class DatabaseController implements DatabaseOperation{
 
   // belongs to Class
   private final static int[] database = new int[] {10, -3, 9};
@@ -25,7 +26,7 @@ public class DatabaseController {
   // Design an API, get the value from array by index
   // index value checking
   // index range: if / try catch
-  @GetMapping(value = "/database/getValue/{index}")
+  @Override
   public String get(@PathVariable String index) {
     try {
       int idx = Integer.parseInt(index);
@@ -39,7 +40,7 @@ public class DatabaseController {
 
   // API: sorting (decending)
   // stream / Collection
-  @GetMapping(value = "/database/sorting")
+  @Override
   public void sort() {
 
     Comparator<Integer> decending = (i1, i2) -> i1.compareTo(i2) > 0 ? -1 : 1;
@@ -56,22 +57,23 @@ public class DatabaseController {
   }
 
   // API: return the array
-  @GetMapping(value = "/database/arr")
+  @Override
   public String arr() {
     return Arrays.toString(database);
   }
 
-  @GetMapping(value = "/database/Family")
-  public Map<String, Integer> getFamilyInfo(@RequestParam String name, @RequestParam int age) {
+  @Override
+  public Map<String, Integer> getFamilyInfo(@RequestParam String name,
+      @RequestParam int age) {
     familyInfo.put(name, age);
     return familyInfo;
   }
-//https://tw.openrice.com/zh/taipei/restaurants?landmarkId=33025&tabIndex=0
-// public String getFamilyInfo(@PathVariable String lang,//
-// @PathVariable country 
-// @PathVariable restaurants 
-// @RequestParam String landmarkId
-// @RequestParam String tabIndex 
+  // https://tw.openrice.com/zh/taipei/restaurants?landmarkId=33025&tabIndex=0
+  // public String getFamilyInfo(@PathVariable String lang,
+  // @PathVariable country
+  // @PathVariable restaurants
+  // @RequestParam String landmarkId
+  // @RequestParam String tabIndex
 
 
 }

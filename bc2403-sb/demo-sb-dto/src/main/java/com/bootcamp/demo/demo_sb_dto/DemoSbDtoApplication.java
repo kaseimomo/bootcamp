@@ -1,13 +1,13 @@
-package com.bootcamp.demo.democalculator;
+package com.bootcamp.demo.demo_sb_dto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoCalculatorApplication {
+public class DemoSbDtoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoCalculatorApplication.class, args);
+		SpringApplication.run(DemoSbDtoApplication.class, args);
 	}
 
 }

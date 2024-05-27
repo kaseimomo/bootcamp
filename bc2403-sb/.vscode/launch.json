@@ -2,6 +2,34 @@
  "configurations": [
   {
    "type": "java",
+   "name": "CalculatorServiceImpl",
+   "request": "launch",
+   "mainClass": "com.bootcamp.demo.demo_ex1_simple_calculator.service.Impl.CalculatorServiceImpl",
+   "projectName": "demo-ex1-simple-calculator"
+  },
+  {
+   "type": "java",
+   "name": "AppConfig",
+   "request": "launch",
+   "mainClass": "com.bootcamp.demo.demo_bookproject.config.AppConfig",
+   "projectName": "demo-bookproject"
+  },
+  {
+   "type": "java",
+   "name": "UserControllerImpl",
+   "request": "launch",
+   "mainClass": "com.bootcamp.demo.demo_bookproject.controller.impl.UserControllerImpl",
+   "projectName": "demo-bookproject"
+  },
+  {
+   "type": "java",
+   "name": "DemoCalculatorApplication",
+   "request": "launch",
+   "mainClass": "com.bootcamp.demo.democalculator.DemoCalculatorApplication",
+   "projectName": "demo-calculator"
+  },
+  {
+   "type": "java",
    "name": "CalculatorController",
    "request": "launch",
    "mainClass": "com.bootcamp.demo.democalculator.controller.CalculatorController",

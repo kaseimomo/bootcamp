@@ -1,0 +1,14 @@
+{
+ "id": 2,
+ "name": "John",
+ "borrowBooks": [
+     {
+         "bookId": 2,
+         "bookName": "RichDaddyPoorDaddy"
+     },
+     {
+         "bookId": 1,
+         "bookName": "HarryPorter"
+     }
+ ]
+}
