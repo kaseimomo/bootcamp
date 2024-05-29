@@ -3,6 +3,8 @@ package com.bootcamp.demo.demo_ex1_simple_calculator.service.Impl;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import org.springframework.stereotype.Service;
+import com.bootcamp.demo.demo_ex1_simple_calculator.dto.CalculatorDTO;
+import com.bootcamp.demo.demo_ex1_simple_calculator.model.BodyInput;
 import com.bootcamp.demo.demo_ex1_simple_calculator.service.CalculatorService;
 
 @Service
@@ -44,6 +46,7 @@ public class CalculatorServiceImpl implements CalculatorService {
   BigDecimal roundedDiv = new BigDecimal(div).setScale(5, RoundingMode.HALF_UP);
   return String.valueOf(roundedDiv);
  }
+
 
 
 

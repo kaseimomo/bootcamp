@@ -9,12 +9,14 @@ public class User {
  private int id;
  private List<Stock> stocks;
 
+ public static int count;
+
  public User() {
-  this.id++;
+  this.id = count++;
   stocks = new ArrayList<>();
  }
 
- public void add(Stock stock) {
-  this.stocks.add(stock);
+ public boolean add(Stock stock) {
+  return this.stocks.add(stock);
  }
 }

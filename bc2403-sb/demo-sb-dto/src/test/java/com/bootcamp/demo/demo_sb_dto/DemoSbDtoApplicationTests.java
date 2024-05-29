@@ -22,9 +22,9 @@ private AppConfig appConfig;
 @Autowired
 private StockController stockController;
 
-	// @Test
-	// void contextLoads() {
-		
-	// }
+// @Test
+// void contextLoads() {
+
+// }
 
 }

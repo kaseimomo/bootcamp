@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class StockDto {
- // DTA stands for Data Tansfer Object
+public class StockDTO {
+ // DTO stands for Data Tansfer Object
 private int stockNo;
 private int quantity;
 }

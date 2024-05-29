@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.MockMvcResultMatchersDsl;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.bootcamp.demo.demo_sb_dto.controller.impl.StockController;
-import com.bootcamp.demo.demo_sb_dto.dto.StockDto;
+import com.bootcamp.demo.demo_sb_dto.dto.StockDTO;
 import com.bootcamp.demo.demo_sb_dto.model.Stock;
 import com.bootcamp.demo.demo_sb_dto.service.StockService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -81,12 +81,12 @@ class StockControllerTest {
         .getContentAsString();
 
     // Deserialize JSON (No Arg Constructor)
-    StockDto[] dtos = new ObjectMapper().readValue(json, StockDto[].class);
+    StockDTO[] dtos = new ObjectMapper().readValue(json, StockDTO[].class);
 
-    List<StockDto> dtoList = Arrays.asList(dtos);
+    List<StockDTO> dtoList = Arrays.asList(dtos);
 
-    assertThat(dtoList, hasItem(new StockDto(5, 3000)));
-    assertThat(dtoList, hasItem(new StockDto(10, 20000)));
+    assertThat(dtoList, hasItem(new StockDTO(5, 3000)));
+    assertThat(dtoList, hasItem(new StockDTO(10, 20000)));
   }
 
 }
