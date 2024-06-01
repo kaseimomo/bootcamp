@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import com.bootcamp.demo.demo_sb_restful.dto.UserDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-
+@ToString
+@Setter
+@NoArgsConstructor
 public class ApiResp<T> {
 
  // private Map<SysCode, SysCode> codeMessageMap;
@@ -79,21 +83,7 @@ public class ApiResp<T> {
   }
  }
 
- public static class Data {
-  String x;
-  String y;
-  String operation;
-  String result;
- }
 
- public static class Cat {
-  String name;
-  Color color;
-
-  public static enum Color {
-   RED, BLACK, WHITE, YELLO,;
-  }
- }
 
  public static void main(String[] args) {
   // Java 9
@@ -111,8 +101,8 @@ public class ApiResp<T> {
   List<String> strings2 = Arrays.asList(new String[] {"abc", "def"});
 
   strings2.set(0, "hello"); // OK. implies sorting is fine
-  // strings2.add("hello");
-  // strings2.remove(0);
+  // strings2.add("hello"); // java.lang.UnsupportedOperationException
+  strings2.remove(0); // java.lang.UnsupportedOperationException
 
   new ArrayList<String>();
   new LinkedList<String>();
@@ -123,6 +113,10 @@ public class ApiResp<T> {
     .data(List.of(new UserDTO()))//
     .build();
 
+    // Test RestTemplate.getForObject()
+    // 1. call Web API, return JSON
+    // 2. Using ObjectMapper for deserialization
+
   // Object -> JSON (Serialization)
   // String json = "{ \"name\" : \"Charles\" }"
   ObjectMapper objectMapper = new ObjectMapper();
@@ -132,8 +126,17 @@ public class ApiResp<T> {
   } catch (JsonProcessingException e) {
    
   }
-  
+  System.out.println(json); //
+    // {"code":0,"message":"Success.","data":[{"id":0,"name":null,"address":null,"company":null}]}
 
-System.out.println(json); // {"code":0,"message":"Success.","data":[{"id":0,"name":null,"address":null,"company":null}]}
+    try {
+      TypeReference<ApiResp<UserDTO>> reference = new TypeReference<>() {};
+      ApiResp<UserDTO> response2 = objectMapper.readValue(json, reference);
+      System.out.println(response2); // ApiResp(code=0, message=Success., data=[UserDTO(id=0, name=null, address=null, company=null)])
+    } catch (JsonProcessingException e) {
+      System.out.println("error");
+    }
+
+
  }
 }
