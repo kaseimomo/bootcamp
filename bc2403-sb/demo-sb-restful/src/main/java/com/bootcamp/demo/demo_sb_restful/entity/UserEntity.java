@@ -7,8 +7,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.Setter;
 
 // JPA will generate the DDL (Create Table) by the definition in Entity class
+
 @Getter
 @Entity
 @Table(name = "Users")
@@ -16,10 +18,12 @@ public class UserEntity {
 
  @Id // Table Primary Key
  @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto increment
+ @Setter
  private Long id;
  private String name;
  @Column(name = "user_name")
  private String username;
+ @Setter
  private String email;
  private String phone;
  private String website;
@@ -45,5 +49,6 @@ public class UserEntity {
  private String companyCatchPhrase;
  @Column(name = "company_BS")
  private String companyBS;
+
 
 }
