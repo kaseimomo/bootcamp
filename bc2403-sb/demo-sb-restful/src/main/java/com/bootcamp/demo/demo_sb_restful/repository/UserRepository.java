@@ -1,7 +1,11 @@
 package com.bootcamp.demo.demo_sb_restful.repository;
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.bootcamp.demo.demo_sb_restful.entity.UserEntity;
 
@@ -19,6 +23,18 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
  // select * from user where addLat = ? and addLong = ?
  List<UserEntity> findByAddLatAndAddLong(String addLat, String addLong);
 
+ // // JPQL -> work with Entity & JPA
+ // @Query(
+ //   value = "select e from UserEntity e where CAST(e.List<UserEntity> findByAddLat(String as double) > :lat")
+ // Optional<List<UserEntity>> findByAddLatGreaterThan(
+ //   @Param(value = "lat") Double latitude);
+
+ // // JPQL + @Modifying (Update, Delete, Insert)
+ // @Modifying
+ // @Query(
+ //   value = "update UserEntity e set e.email = :newEmail where e.id = :userId")
+ // int updateUserEmail(@Param("userId") Long id, @Param("newEmail") String email);
+
  // Challenge:
  // Can JPA Method Naming Convention support the following SQL syntax?
  // 1. order by
@@ -30,8 +46,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
  List<UserEntity> findAllByOrderByName();
 
  List<UserEntity> findByEmailLike(String email);
-
- 
 
 
 

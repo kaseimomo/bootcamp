@@ -36,8 +36,8 @@ public class UserServiceImpl implements UserService {
   @Value(value = "${api.json-place-holder.endpoints.users}")
   private String userEndpoints;
 
-  @Value(value = "${api.json-place-holder.endpoints.posts}")
-  private String postEndpoints;
+  // @Value(value = "${api.json-place-holder.endpoints.posts}")
+  // private String postEndpoints;
 
   @Value(value = "${api.json-place-holder.endpoints.albums}")
   private String albumEndpoints;
@@ -50,8 +50,7 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   private UserRepository userRepository;
-  @Autowired
-  private PostRepository postRepository;
+  
   @Autowired
   private AlbumRepository albumRepository;
 
@@ -86,16 +85,6 @@ public class UserServiceImpl implements UserService {
     return user;
   }
 
-  @Override
-  public List<Post> getPostApi() {
-    String url = UriComponentsBuilder.newInstance() //
-        .scheme(Scheme.HTTPS.lowerCase()) // https or http
-        .host(this.domain)//
-        .path(this.postEndpoints)//
-        .toUriString(); // handle "://"
-    Post[] apiPosts = restTemplate.getForObject(url, Post[].class);
-    return Arrays.asList(apiPosts);
-  }
 
   @Override
   public List<Album> getAlbumApi() {
@@ -113,10 +102,6 @@ public class UserServiceImpl implements UserService {
     return userRepository.save(user);
   }
 
-  @Override
-  public PostEntity save(PostEntity post) {
-    return postRepository.save(post);
-  }
 
   @Override
   public AlbumEntity save(AlbumEntity album) {

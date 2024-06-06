@@ -15,14 +15,11 @@ public interface UserService {
  List<User> getAllUser();
 
  User addUser(User user);
-
- List<Post> getPostApi();
-
+ 
  List<Album> getAlbumApi();
 
  UserEntity save(UserEntity user);
 
- PostEntity save(PostEntity post);
 
  AlbumEntity save(AlbumEntity album);
 

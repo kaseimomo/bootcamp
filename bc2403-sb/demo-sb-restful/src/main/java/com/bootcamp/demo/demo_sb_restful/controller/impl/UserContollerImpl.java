@@ -66,11 +66,6 @@ public class UserContollerImpl implements UserOperation {
     return userService.save(user);
   }
 
-  @Override
-  public PostEntity savePost(@RequestBody PostEntity post) {
-    return userService.save(post);
-
-  }
 
   @Override
   public AlbumEntity saveAlbum(@RequestBody AlbumEntity album) {

@@ -39,8 +39,6 @@ public interface UserOperation {
  @PostMapping(value = "/user")
  UserEntity saveUser(UserEntity user);
 
- @PostMapping(value = "/post")
- PostEntity savePost(PostEntity post);
 
  @PostMapping(value = "/album")
  AlbumEntity saveAlbum(AlbumEntity album);

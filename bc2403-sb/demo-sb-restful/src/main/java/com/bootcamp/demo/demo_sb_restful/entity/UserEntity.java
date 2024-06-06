@@ -1,18 +1,31 @@
 package com.bootcamp.demo.demo_sb_restful.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 // JPA will generate the DDL (Create Table) by the definition in Entity class
 
 @Getter
+@Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Table(name = "Users")
 public class UserEntity {
 
@@ -50,5 +63,16 @@ public class UserEntity {
  @Column(name = "company_BS")
  private String companyBS;
 
+ // /* Version */
+ // // "user" is PostEntity.class sttribue
+ // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+ // @JsonManagedReference
+ // private List<PostEntity> posts = new ArrayList<>();
+
+ // /* Version: Version: With reference column user_id, but without Foreign Key */
+ // /* Unidirectional Relationship */
+ // @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+ // @JoinColumn(name = "user_id")
+ // private List<PostEntity> posts = new ArrayList<>();
 
 }
