@@ -12,7 +12,7 @@ import java.util.List;
 public class ApiResp<T> {
 
   // private Map<SysCode, SysCode> codeMessageMap;
-  private int code;
+  private String code;
   private String message;
   private List<T> data;
 
@@ -22,7 +22,7 @@ public class ApiResp<T> {
     this.data = builder.data;
   }
 
-  public int getCode() {
+  public String getCode() {
     return this.code;
   }
 
@@ -48,11 +48,11 @@ public class ApiResp<T> {
   }
 
   public static class ApiRespBuilder<T> {
-    private int code;
+    private String code;
     private String message;
     List<T> data;
 
-    public ApiRespBuilder<T> code(int code) {
+    public ApiRespBuilder<T> code(String code) {
       this.code = code;
       return this;
     }
@@ -67,7 +67,7 @@ public class ApiResp<T> {
 
     //
     public ApiRespBuilder<T> ok() {
-      this.code = 0;
+      this.code = "000000";
       this.message = "Success.";
       return this;
     }
@@ -75,13 +75,13 @@ public class ApiResp<T> {
     public ApiRespBuilder<T> error(ErrorCode errorCode) {
       if (errorCode == null)
         throw new NullPointerException("errorCode connot ne null.");
-      this.code = errorCode.getCode();
+      this.code = String.valueOf(errorCode.getCode());
       this.message = errorCode.getDesc();
       return this;
     }
 
-    public ApiRespBuilder<T> data(List<T> data) {
-      this.data = data;
+    public ApiRespBuilder<T> data(T data) {
+      this.data = List.of(data);
       return this;
     }
 

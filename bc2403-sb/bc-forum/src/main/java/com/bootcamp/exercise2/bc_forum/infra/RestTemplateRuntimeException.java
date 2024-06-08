@@ -1,6 +1,5 @@
 package com.bootcamp.exercise2.bc_forum.infra;
 
-import org.springframework.web.client.HttpClientErrorException;
 import lombok.Getter;
 
 @Getter

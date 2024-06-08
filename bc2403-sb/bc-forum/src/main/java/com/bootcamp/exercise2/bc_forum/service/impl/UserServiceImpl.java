@@ -2,21 +2,21 @@ package com.bootcamp.exercise2.bc_forum.service.impl;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import com.bootcamp.exercise2.bc_forum.dto.UserCommentDTO;
-import com.bootcamp.exercise2.bc_forum.dto.UserCommentDTO.CommentDTO;
 import com.bootcamp.exercise2.bc_forum.entity.UserEntity;
+import com.bootcamp.exercise2.bc_forum.infra.NotFoundException;
 import com.bootcamp.exercise2.bc_forum.infra.Scheme;
 import com.bootcamp.exercise2.bc_forum.infra.UrlBuilder;
-import com.bootcamp.exercise2.bc_forum.mapper.UserCommentMapper;
-import com.bootcamp.exercise2.bc_forum.mapper.UserMapper;
+import com.bootcamp.exercise2.bc_forum.mapper.EntityMapper;
 import com.bootcamp.exercise2.bc_forum.model.Comment;
 import com.bootcamp.exercise2.bc_forum.model.Post;
 import com.bootcamp.exercise2.bc_forum.model.User;
+import com.bootcamp.exercise2.bc_forum.repository.CommentRepository;
+import com.bootcamp.exercise2.bc_forum.repository.PostRepository;
 import com.bootcamp.exercise2.bc_forum.repository.UserRepository;
 import com.bootcamp.exercise2.bc_forum.service.UserService;
 
@@ -39,6 +39,15 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   UserRepository userRepository;
+
+  @Autowired
+  PostRepository postRepository;
+
+  @Autowired
+  CommentRepository commentRepository;
+
+  @Autowired
+  EntityMapper entityMapper;
 
 
 
@@ -64,12 +73,54 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public UserEntity save(UserEntity user) {
-    return userRepository.save(user);
+  public void fetchAndSaveUsers() {
+    if (getUsers() != null) {
+      getUsers().stream()//
+          .map(u -> entityMapper.userMapEntity(u))//
+          .forEach(u -> userRepository.save(u));
+    }
   }
 
+  @Override
+  public void fetchAndSavePosts() {
+    if (getPosts() != null) {
+      getPosts().stream()//
+          .map(p -> entityMapper.postMapEntity(p))//
+          .forEach(p -> postRepository.save(p));
+    }
+  }
 
+  @Override
+  public void fetchAndSaveComments() {
+    if (getComments() != null) {
+      getComments().stream()//
+          .map(c -> entityMapper.commentMapEntity(c))//
+          .forEach(c -> commentRepository.save(c));
+    }
+  }
 
+  @Override
+  public List<UserEntity> allUser() {
+    return userRepository.findAll();
+  }
+
+  @Override
+  public UserEntity getUserEntityById(Long userId) {
+    Optional<UserEntity> userEntityId = userRepository.findById(userId);
+    if (userEntityId.isPresent())
+      return userEntityId.get();
+    throw new NotFoundException();
+  }
+
+  @Override
+  public UserEntity updateUserInfo(Long id, UserEntity user) {
+    Optional<UserEntity> userId = userRepository.findById(id);
+    if (userId.isPresent()) {
+      userRepository.save(user);
+      return user;
+    }
+    throw new NotFoundException();
+  }
   // @Override
   // public UserCommentDTO getCommentById2(int userId) {
   // User user = this.getUsers().stream()//

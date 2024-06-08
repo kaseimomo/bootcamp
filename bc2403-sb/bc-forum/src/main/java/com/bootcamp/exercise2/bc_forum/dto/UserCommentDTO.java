@@ -1,7 +1,6 @@
 package com.bootcamp.exercise2.bc_forum.dto;
 
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
