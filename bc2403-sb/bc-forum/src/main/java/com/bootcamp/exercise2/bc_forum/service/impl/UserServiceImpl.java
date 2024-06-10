@@ -12,8 +12,8 @@ import com.bootcamp.exercise2.bc_forum.infra.NotFoundException;
 import com.bootcamp.exercise2.bc_forum.infra.Scheme;
 import com.bootcamp.exercise2.bc_forum.infra.UrlBuilder;
 import com.bootcamp.exercise2.bc_forum.mapper.EntityMapper;
-import com.bootcamp.exercise2.bc_forum.model.Comment;
-import com.bootcamp.exercise2.bc_forum.model.Post;
+// import com.bootcamp.exercise2.bc_forum.model.Comment;
+// import com.bootcamp.exercise2.bc_forum.model.Post;
 import com.bootcamp.exercise2.bc_forum.model.User;
 import com.bootcamp.exercise2.bc_forum.repository.CommentRepository;
 import com.bootcamp.exercise2.bc_forum.repository.PostRepository;
@@ -28,11 +28,11 @@ public class UserServiceImpl implements UserService {
   @Value(value = "${api.json-place-holder.endpoints.users}")
   private String userEndpoints;
 
-  @Value(value = "${api.json-place-holder.endpoints.posts}")
-  private String postEndpoints;
+  // @Value(value = "${api.json-place-holder.endpoints.posts}")
+  // private String postEndpoints;
 
-  @Value(value = "${api.json-place-holder.endpoints.comments}")
-  private String commentEndpoints;
+  // @Value(value = "${api.json-place-holder.endpoints.comments}")
+  // private String commentEndpoints;
 
   @Autowired
   RestTemplate restTemplate;
@@ -58,46 +58,46 @@ public class UserServiceImpl implements UserService {
     return Arrays.asList(users);
   }
 
-  @Override
-  public List<Post> getPosts() {
-    String url = UrlBuilder.get(Scheme.HTTPS, domain, postEndpoints);
-    Post[] posts = restTemplate.getForObject(url, Post[].class);
-    return Arrays.asList(posts);
-  }
+  // @Override
+  // public List<Post> getPosts() {
+  //   String url = UrlBuilder.get(Scheme.HTTPS, domain, postEndpoints);
+  //   Post[] posts = restTemplate.getForObject(url, Post[].class);
+  //   return Arrays.asList(posts);
+  // }
 
-  @Override
-  public List<Comment> getComments() {
-    String url = UrlBuilder.get(Scheme.HTTPS, domain, commentEndpoints);
-    Comment[] comments = restTemplate.getForObject(url, Comment[].class);
-    return Arrays.asList(comments);
-  }
+  // @Override
+  // public List<Comment> getComments() {
+  //   String url = UrlBuilder.get(Scheme.HTTPS, domain, commentEndpoints);
+  //   Comment[] comments = restTemplate.getForObject(url, Comment[].class);
+  //   return Arrays.asList(comments);
+  // }
 
   @Override
   public void fetchAndSaveUsers() {
-    if (getUsers() != null) {
+    if (userRepository == null) {
       getUsers().stream()//
           .map(u -> entityMapper.userMapEntity(u))//
           .forEach(u -> userRepository.save(u));
     }
   }
 
-  @Override
-  public void fetchAndSavePosts() {
-    if (getPosts() != null) {
-      getPosts().stream()//
-          .map(p -> entityMapper.postMapEntity(p))//
-          .forEach(p -> postRepository.save(p));
-    }
-  }
+  // @Override
+  // public void fetchAndSavePosts() {
+  //   if (getPosts() != null) {
+  //     getPosts().stream()//
+  //         .map(p -> entityMapper.postMapEntity(p))//
+  //         .forEach(p -> postRepository.save(p));
+  //   }
+  // }
 
-  @Override
-  public void fetchAndSaveComments() {
-    if (getComments() != null) {
-      getComments().stream()//
-          .map(c -> entityMapper.commentMapEntity(c))//
-          .forEach(c -> commentRepository.save(c));
-    }
-  }
+  // @Override
+  // public void fetchAndSaveComments() {
+  //   if (getComments() != null) {
+  //     getComments().stream()//
+  //         .map(c -> entityMapper.commentMapEntity(c))//
+  //         .forEach(c -> commentRepository.save(c));
+  //   }
+  // }
 
   @Override
   public List<UserEntity> allUser() {

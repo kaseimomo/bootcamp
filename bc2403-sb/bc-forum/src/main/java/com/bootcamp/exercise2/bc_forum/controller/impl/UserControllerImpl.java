@@ -18,12 +18,18 @@ import com.bootcamp.exercise2.bc_forum.mapper.UserMapper;
 import com.bootcamp.exercise2.bc_forum.model.Comment;
 import com.bootcamp.exercise2.bc_forum.model.Post;
 import com.bootcamp.exercise2.bc_forum.model.User;
+import com.bootcamp.exercise2.bc_forum.service.CommentService;
+import com.bootcamp.exercise2.bc_forum.service.PostService;
 import com.bootcamp.exercise2.bc_forum.service.UserService;
 
 @RestController
 public class UserControllerImpl implements UserOperator {
   @Autowired
   UserService userService;
+  @Autowired
+  PostService postService;
+  @Autowired
+  CommentService commentService;
 
   @Autowired
   UserMapper userMapper;
@@ -36,8 +42,8 @@ public class UserControllerImpl implements UserOperator {
   @Override
   public List<UserDTO> getAllData() {
     List<User> users = userService.getUsers();
-    List<Post> posts = userService.getPosts();
-    List<Comment> comments = userService.getComments();
+    List<Post> posts = postService.getPosts();
+    List<Comment> comments = commentService.getComments();
 
     // filter posts and comments
     List<UserDTO> userDTO = users.stream()//
@@ -64,11 +70,11 @@ public class UserControllerImpl implements UserOperator {
         .findFirst()//
         .get();//
 
-    List<Post> userPosts = userService.getPosts().stream()//
+    List<Post> userPosts = postService.getPosts().stream()//
         .filter(p -> p.getUserId() == userId)//
         .collect(Collectors.toList());
 
-    List<Comment> userComments = userService.getComments().stream()//
+    List<Comment> userComments = commentService.getComments().stream()//
         .filter(c -> userPosts.stream()//
             .anyMatch(p -> p.getId() == c.getPostId()))//
         .collect(Collectors.toList());
@@ -110,6 +116,8 @@ public class UserControllerImpl implements UserOperator {
         .data(userEntity)//
         .build();
   }
+
+
 
 }
 

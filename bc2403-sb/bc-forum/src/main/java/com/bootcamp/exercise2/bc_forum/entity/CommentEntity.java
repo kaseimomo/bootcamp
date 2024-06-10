@@ -1,5 +1,6 @@
 package com.bootcamp.exercise2.bc_forum.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +32,6 @@ public class CommentEntity {
 
  @ManyToOne
  @JoinColumn(name = "post_id") // DB table column name (Foreign Key)
- // @JsonBackReference
+ @JsonBackReference
  private PostEntity post; // object
 }

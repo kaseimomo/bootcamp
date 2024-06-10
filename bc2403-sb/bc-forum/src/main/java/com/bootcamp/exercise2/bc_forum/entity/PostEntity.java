@@ -2,6 +2,7 @@ package com.bootcamp.exercise2.bc_forum.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,10 +33,11 @@ public class PostEntity {
 
  @ManyToOne
  @JoinColumn(name = "user_id") // DB table column name (Foreign Key)
- // @JsonBackReference
+ @JsonBackReference
  private UserEntity user; // object
 
  @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
  @JoinColumn(name = "post_id")
+ @JsonBackReference
  private List<CommentEntity> comments = new ArrayList<>();
 }

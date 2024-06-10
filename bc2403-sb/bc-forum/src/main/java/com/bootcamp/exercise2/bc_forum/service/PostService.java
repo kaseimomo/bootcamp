@@ -1,7 +1,15 @@
 package com.bootcamp.exercise2.bc_forum.service;
 
+import java.util.List;
 import com.bootcamp.exercise2.bc_forum.entity.PostEntity;
+import com.bootcamp.exercise2.bc_forum.model.Post;
 
 public interface PostService {
- PostEntity save(PostEntity post);
+ List<Post> getPosts();
+
+ void fetchAndSavePosts();
+
+ List<PostEntity> getAllPost();
+
+ List<PostEntity> getPostbyUserId(Long UserId);
 }

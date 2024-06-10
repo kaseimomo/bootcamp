@@ -53,4 +53,14 @@ public class EntityMapper {
   commentEntity.setPost(postEntity);
   return commentEntity; 
  }
+
+ public Post mapPost(PostEntity postEntity) {
+  return Post.builder()
+  .id(postEntity.getId())
+  .title(postEntity.getTitle())
+  .body(postEntity.getBody())
+  .userId(postEntity.getUser().getId())
+  .build();
+ }
+
 }

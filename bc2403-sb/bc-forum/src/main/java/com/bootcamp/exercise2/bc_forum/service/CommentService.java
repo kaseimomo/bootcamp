@@ -1,7 +1,10 @@
 package com.bootcamp.exercise2.bc_forum.service;
 
-import com.bootcamp.exercise2.bc_forum.entity.CommentEntity;
+import java.util.List;
+import com.bootcamp.exercise2.bc_forum.model.Comment;
 
 public interface CommentService {
- CommentEntity save(CommentEntity comment);
+ List<Comment> getComments();
+
+ void fetchAndSaveComments();
 }
