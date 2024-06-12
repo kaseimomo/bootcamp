@@ -34,4 +34,5 @@ Ref: users.id < posts.user_id
 
 Ref: posts.id < comments.post_id
 
-![Alt text] (/Users/charleschan/bootcamp/bc2403-sb/bc-forum/Tables.png)
+#### ER Diagram
+<img alt="ER Diagram" width="1000px" src="Tables.png" />
