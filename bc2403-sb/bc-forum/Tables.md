@@ -34,4 +34,4 @@ Ref: users.id < posts.user_id
 
 Ref: posts.id < comments.post_id
 
-![Example Image] (Tables.png)
+![Alt text] (/Users/charleschan/bootcamp/bc2403-sb/bc-forum/Tables.png)
