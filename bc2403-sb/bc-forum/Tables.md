@@ -35,4 +35,4 @@ Ref: users.id < posts.user_id
 Ref: posts.id < comments.post_id
 
 #### ER Diagram
-<img alt="ER Diagram" width="300" src="Tables.png" />
+<img alt="ER Diagram" width="600" src="Tables.png" />
