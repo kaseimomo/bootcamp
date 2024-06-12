@@ -12,4 +12,8 @@ public interface PostService {
  List<PostEntity> getAllPost();
 
  List<PostEntity> getPostbyUserId(Long UserId);
+
+ PostEntity addNewPostByUserId(long userId, PostEntity postEntity);
+
+ PostEntity delPostByPostId(long postId);
 }

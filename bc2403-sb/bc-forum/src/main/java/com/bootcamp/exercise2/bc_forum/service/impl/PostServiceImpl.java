@@ -68,13 +68,29 @@ public class PostServiceImpl implements PostService {
   throw new NotFoundException();
  }
 
+ @Override
  public PostEntity addNewPostByUserId(long userId, PostEntity postEntity) {
   Optional<UserEntity> userEntityId = userRepository.findById(userId);
   if (userEntityId.isPresent()) {
-   postRepository.findByUserId(userId);
+   UserEntity userEntity = userEntityId.get();
+   postEntity.setUser(userEntity);
    return postRepository.save(postEntity);
   }
   throw new NotFoundException();
  }
+
+ @Override
+ public PostEntity delPostByPostId(long postId) {
+  Optional<PostEntity> postEntityId = postRepository.findById(postId);
+  if (postEntityId.isPresent()) {
+   postRepository.deleteById(postId);;
+   return postEntityId.get();
+  }
+  throw new NotFoundException();
+ }
+
+ 
+
+ 
 
 }

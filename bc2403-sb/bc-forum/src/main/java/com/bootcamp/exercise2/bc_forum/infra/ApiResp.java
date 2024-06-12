@@ -72,6 +72,12 @@ public class ApiResp<T> {
       return this;
     }
 
+    public ApiRespBuilder<T> delPass() {
+      this.code = "000000";
+      this.message = "Delete Success.";
+      return this;
+    }
+
     public ApiRespBuilder<T> error(ErrorCode errorCode) {
       if (errorCode == null)
         throw new NullPointerException("errorCode connot ne null.");
