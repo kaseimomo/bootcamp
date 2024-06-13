@@ -1,0 +1,11 @@
+server:
+  port: 8085
+
+api:
+  weather: 
+    domain: 'data.weather.gov.hk'
+    endpoints: 
+      forecast: '/weatherAPI/opendata/weather.php'
+    params:
+      dataType: 'fnd'
+      lang: 'en'

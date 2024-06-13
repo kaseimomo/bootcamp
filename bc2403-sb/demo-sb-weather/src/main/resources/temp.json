@@ -1,0 +1,250 @@
+{
+ "generalSituation": "The broad area of low pressure over the central to northern parts of the South China Sea will develop gradually today and tomorrow and edge towards to the coast of western Guangdong to the vicinity of the Pearl River Estuary. There will be squally showers and thunderstorms and it will be windier over the region in the next couple of days. An easterly airstream is expected to affect the coast of Guangdong early to midweek next week. Besides, Tropical Cyclone Ewiniar will move across the seas south of Japan today and tomorrow, and transform into an extratropical cyclone gradually.",
+ "weatherForecast": [
+     {
+         "forecastDate": "20240530",
+         "week": "Thursday",
+         "forecastWind": "East force 4 to 5, occasionally force 6 offshore and on high ground at first.",
+         "forecastWeather": "Mainly cloudy with a few showers.",
+         "forecastMaxtemp": {
+             "value": 30,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 25,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 90,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 70,
+             "unit": "percent"
+         },
+         "ForecastIcon": 62,
+         "PSR": "Low"
+     },
+     {
+         "forecastDate": "20240531",
+         "week": "Friday",
+         "forecastWind": "South to southeast force 4 to 5, occasionally force 6 offshore later.",
+         "forecastWeather": "Mainly cloudy with occasional showers. A few squally thunderstorms later.",
+         "forecastMaxtemp": {
+             "value": 30,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 26,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 95,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 80,
+             "unit": "percent"
+         },
+         "ForecastIcon": 63,
+         "PSR": "Medium High"
+     },
+     {
+         "forecastDate": "20240601",
+         "week": "Saturday",
+         "forecastWind": "South to southwest force 4 to 5, occasionally force 6 offshore.",
+         "forecastWeather": "Mainly cloudy with occasional showers and a few squally thunderstorms.",
+         "forecastMaxtemp": {
+             "value": 29,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 26,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 95,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 80,
+             "unit": "percent"
+         },
+         "ForecastIcon": 63,
+         "PSR": "High"
+     },
+     {
+         "forecastDate": "20240602",
+         "week": "Sunday",
+         "forecastWind": "East to southeast force 3 to 4.",
+         "forecastWeather": "Mainly cloudy with a few showers and isolated thunderstorms.",
+         "forecastMaxtemp": {
+             "value": 29,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 25,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 95,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 70,
+             "unit": "percent"
+         },
+         "ForecastIcon": 62,
+         "PSR": "Medium"
+     },
+     {
+         "forecastDate": "20240603",
+         "week": "Monday",
+         "forecastWind": "East force 4 to 5.",
+         "forecastWeather": "Mainly cloudy with a few showers. Isolated thunderstorms at first.",
+         "forecastMaxtemp": {
+             "value": 28,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 25,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 90,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 75,
+             "unit": "percent"
+         },
+         "ForecastIcon": 62,
+         "PSR": "Medium"
+     },
+     {
+         "forecastDate": "20240604",
+         "week": "Tuesday",
+         "forecastWind": "East force 4 to 5, occasionally force 6 offshore later.",
+         "forecastWeather": "Mainly cloudy with a few showers.",
+         "forecastMaxtemp": {
+             "value": 28,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 25,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 90,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 70,
+             "unit": "percent"
+         },
+         "ForecastIcon": 62,
+         "PSR": "Medium"
+     },
+     {
+         "forecastDate": "20240605",
+         "week": "Wednesday",
+         "forecastWind": "East force 4 to 5, occasionally force 6 offshore.",
+         "forecastWeather": "Bright periods and one or two showers.",
+         "forecastMaxtemp": {
+             "value": 28,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 25,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 90,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 70,
+             "unit": "percent"
+         },
+         "ForecastIcon": 54,
+         "PSR": "Medium Low"
+     },
+     {
+         "forecastDate": "20240606",
+         "week": "Thursday",
+         "forecastWind": "East force 4 to 5, occasionally force 6 offshore.",
+         "forecastWeather": "Bright periods and one or two showers.",
+         "forecastMaxtemp": {
+             "value": 28,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 24,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 85,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 70,
+             "unit": "percent"
+         },
+         "ForecastIcon": 54,
+         "PSR": "Low"
+     },
+     {
+         "forecastDate": "20240607",
+         "week": "Friday",
+         "forecastWind": "East force 4 to 5, occasionally force 6 offshore.",
+         "forecastWeather": "Mainly cloudy with one or two showers.",
+         "forecastMaxtemp": {
+             "value": 28,
+             "unit": "C"
+         },
+         "forecastMintemp": {
+             "value": 24,
+             "unit": "C"
+         },
+         "forecastMaxrh": {
+             "value": 85,
+             "unit": "percent"
+         },
+         "forecastMinrh": {
+             "value": 70,
+             "unit": "percent"
+         },
+         "ForecastIcon": 62,
+         "PSR": "Low"
+     }
+ ],
+ "updateTime": "2024-05-30T10:30:00+08:00",
+ "seaTemp": {
+     "place": "North Point",
+     "value": 25,
+     "unit": "C",
+     "recordTime": "2024-05-30T07:00:00+08:00"
+ },
+ "soilTemp": [
+     {
+         "place": "Hong Kong Observatory",
+         "value": 27.5,
+         "unit": "C",
+         "recordTime": "2024-05-30T07:00:00+08:00",
+         "depth": {
+             "unit": "metre",
+             "value": 0.5
+         }
+     },
+     {
+         "place": "Hong Kong Observatory",
+         "value": 27.2,
+         "unit": "C",
+         "recordTime": "2024-05-30T07:00:00+08:00",
+         "depth": {
+             "unit": "metre",
+             "value": 1
+         }
+     }
+ ]
+}
