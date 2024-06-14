@@ -1,15 +1,17 @@
 package com.bootcamp.demo.demo_sb_restful.model.dto;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
+@Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class User {
  private int id;
  private String name;
@@ -21,6 +23,7 @@ public class User {
  private Company company;
 
  @Getter
+ @Setter
  public static class Address {
   private String street;
   private String suite;
@@ -30,6 +33,7 @@ public class User {
  }
 
  @Getter
+ @Setter
  public static class Company {
   private String name;
   private String catchPhrase;
@@ -38,6 +42,7 @@ public class User {
  }
 
  @Getter
+ @Setter
  public static class Geo {
   @JsonProperty(value = "lat")
   private String latitude;

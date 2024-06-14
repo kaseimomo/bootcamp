@@ -20,6 +20,7 @@ import com.bootcamp.demo.demo_sb_restful.model.dto.Album;
 import com.bootcamp.demo.demo_sb_restful.model.dto.Post;
 import com.bootcamp.demo.demo_sb_restful.model.dto.User;
 import com.bootcamp.demo.demo_sb_restful.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 @RestController
 @RequestMapping(value = "/v1")
@@ -33,13 +34,13 @@ public class UserContollerImpl implements UserOperation {
 
 
   @Override
-  public List<UserDTO> getUsersApi() {
+  public List<UserDTO> getUsersApi() throws JsonProcessingException {
     return userService.getUsersApi().stream().map(mapper::apiMap)
         .collect(Collectors.toList());
   }
 
   @Override
-  public List<UserDTO> getAllUser() {
+  public List<UserDTO> getAllUser() throws JsonProcessingException {
     return userService.getAllUser().stream().map(mapper::map)
         .collect(Collectors.toList());
   }
@@ -49,10 +50,6 @@ public class UserContollerImpl implements UserOperation {
     return mapper.map(userService.addUser(user));
   }
 
-  @Override
-  public List<Post> getPostsApi() {
-    return userService.getPostApi();
-  }
 
   @Override
   public List<Album> getAlbumsApi() {

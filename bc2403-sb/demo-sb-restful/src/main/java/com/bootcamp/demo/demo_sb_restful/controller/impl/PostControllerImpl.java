@@ -1,21 +1,27 @@
 package com.bootcamp.demo.demo_sb_restful.controller.impl;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.bootcamp.demo.demo_sb_restful.controller.PostOperation;
 import com.bootcamp.demo.demo_sb_restful.entity.PostEntity;
+import com.bootcamp.demo.demo_sb_restful.model.dto.Post;
 import com.bootcamp.demo.demo_sb_restful.service.PostService;
 
 @RestController
-public class PostControllerImpl implements PostOperation{
- 
- @Autowired
- private PostService postService;
+public class PostControllerImpl implements PostOperation {
 
-   @Override
+  @Autowired
+  private PostService postService;
+
+  @Override
   public PostEntity savePost(@RequestBody PostEntity post) {
     return postService.save(post);
+  }
 
+  @Override
+  public List<Post> getPostsApi() {
+    return postService.getPostApi();
   }
 }

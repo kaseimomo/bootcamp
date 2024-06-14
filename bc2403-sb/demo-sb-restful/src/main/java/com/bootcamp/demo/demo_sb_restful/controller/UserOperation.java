@@ -17,21 +17,21 @@ import com.bootcamp.demo.demo_sb_restful.infra.ApiResp;
 import com.bootcamp.demo.demo_sb_restful.model.dto.Album;
 import com.bootcamp.demo.demo_sb_restful.model.dto.Post;
 import com.bootcamp.demo.demo_sb_restful.model.dto.User;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 
 public interface UserOperation {
 
  @GetMapping(value = "/jsonplaceholder/api/users")
- List<UserDTO> getUsersApi();
+ List<UserDTO> getUsersApi() throws JsonProcessingException;
 
  @GetMapping(value = "/jsonplaceholder/users")
- List<UserDTO> getAllUser();
+ List<UserDTO> getAllUser() throws JsonProcessingException;
 
  @PostMapping(value = "/jsonplaceholder/adduser")
  UserDTO addUser(@RequestBody User user);
 
- @GetMapping(value = "/jsonplaceholder/api/posts")
- List<Post> getPostsApi();
+ 
 
  @GetMapping(value = "/jsonplaceholder/api/albums")
  List<Album> getAlbumsApi();

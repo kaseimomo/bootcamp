@@ -8,11 +8,12 @@ import com.bootcamp.demo.demo_sb_restful.entity.UserEntity;
 import com.bootcamp.demo.demo_sb_restful.model.dto.Album;
 import com.bootcamp.demo.demo_sb_restful.model.dto.Post;
 import com.bootcamp.demo.demo_sb_restful.model.dto.User;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 public interface UserService {
- List<User> getUsersApi();
+ List<User> getUsersApi() throws JsonProcessingException;
 
- List<User> getAllUser();
+ List<User> getAllUser() throws JsonProcessingException;
 
  User addUser(User user);
  
